@@ -1,36 +1,32 @@
+// app/components/Home.tsx
+
 "use client";
 
 import Image from "next/image";
-// app/components/Home.tsx
-import VideoSlider from "./VideoSlider"; // default import
-
 
 export default function Home() {
   return (
     <div className="relative flex flex-col min-h-screen">
-      {/* Video na pozadí */}
-      <video
-        className="absolute inset-0 w-full h-full object-cover"
-        src="/Video/VideoRun.mp4" // Nahraďte správnou cestou k videu
-        autoPlay
-        loop
-        muted
-      ></video>
+      {/* Úvodní video na pozadí */}
+      <div className="relative w-full h-screen">
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          src="/Video/VideoRun.mp4" // Nahraďte správnou cestou k videu
+          autoPlay
+          loop
+          muted
+        ></video>
 
-      {/* Overlay pro tmavý efekt na videu */}
-      <div className="absolute inset-0 bg-black opacity-50"></div>
+        {/* Overlay pro tmavý efekt na videu */}
+        <div className="absolute inset-0 bg-black opacity-50"></div>
 
-      {/* Text uprostřed viewportu */}
-      <main className="relative z-10 flex items-center justify-center text-center text-white min-h-screen">
-        <h1 className="text-4xl md:text-6xl font-bold px-4">
-          Vítejte na naší stránce!
-        </h1>
-      </main>
-
-      {/* Slider s produkty */}
-      <section className="relative z-10 py-12">
-        <VideoSlider />
-      </section>
+        {/* Text uprostřed viewportu */}
+        <main className="relative z-10 flex items-center justify-center text-center text-white h-full">
+          <h1 className="text-4xl md:text-6xl font-bold px-4">
+            Vítejte na naší stránce!
+          </h1>
+        </main>
+      </div>
 
       {/* Footer */}
       <footer className="relative z-10 bg-gray-800 text-white py-6 flex items-center justify-center gap-6">
