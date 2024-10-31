@@ -1,10 +1,10 @@
 "use client";
 
-import type { Metadata } from "next";
+
 import localFont from "next/font/local";
 import "./globals.css";
-import { useState, useEffect } from "react";
-import { Search, ShoppingCart, ChevronDown, X } from 'lucide-react';
+import { useState,} from "react";
+import { Search, ShoppingCart, ChevronDown, X, Link } from 'lucide-react';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -76,7 +76,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
               <div className="flex items-center justify-between h-20">
                 {/* Logo */}
                 <div className="flex-shrink-0 ml-8">
-                  <a href="/" className="text-2xl font-bold font-mono text-cyan-400">HI-TECH</a>
+                <Link href="/" className="text-2xl font-bold font-mono text-cyan-400">HI-TECH</Link>
                 </div>
 
                 {/* Main Navigation */}
@@ -112,10 +112,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
                               <ul className="space-y-4">
                                 {link.submenu.categories.map((category, idx) => (
                                   <li key={idx}>
-                                    <a href="#" className="hover:text-cyan-400 transition-colors duration-300 text-sm uppercase tracking-wide group flex items-center">
+                                    <Link href="#" className="hover:text-cyan-400 transition-colors duration-300 text-sm uppercase tracking-wide group flex items-center">
                                       <span className="transform transition-transform duration-300 group-hover:translate-x-2">{category}</span>
                                       <ChevronDown className="w-4 h-4 ml-2 rotate-[-90deg] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                                    </a>
+                                    </Link>
                                   </li>
                                 ))}
                               </ul>
@@ -173,7 +173,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
               </div>
 
               <div className="flex-1 text-center">
-                <a href="/" className="text-2xl font-mono font-bold text-cyan-400">HI-TECH</a>
+                <Link href="/" className="text-2xl font-mono font-bold text-cyan-400">HI-TECH</Link>
               </div>
 
               {/* Hamburger Icon */}
@@ -210,7 +210,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                     <ul className="space-y-2">
                       {link.submenu.categories.map((category, idx) => (
                         <li key={idx} className="hover:text-cyan-300">
-                          <a href="#" className="text-sm uppercase tracking-wide">{category}</a>
+                          <Link href="#" className="text-sm uppercase tracking-wide">{category}</Link>
                         </li>
                       ))}
                     </ul>
